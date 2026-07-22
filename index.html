@@ -1,79 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nistikon — Support</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6; color: #333;
-            background: linear-gradient(135deg, #141210 0%, #8B1E1E 100%);
-            min-height: 100vh; padding: 20px;
-        }
-        .container {
-            max-width: 800px; margin: 0 auto; background: #F5EEDC;
-            border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); padding: 40px;
-        }
-        .header { text-align: center; margin-bottom: 30px; }
-        .header img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
-        .header h1 { font-size: 2em; color: #8B1E1E; margin: 16px 0 6px; }
-        .tagline { color: #666; font-size: 1.05em; }
-        h2 { color: #444; margin-top: 30px; margin-bottom: 12px; font-size: 1.3em; }
-        p { margin-bottom: 15px; color: #555; }
-        ul { margin-left: 25px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; color: #555; }
-        .faq-q { font-weight: 600; color: #333; margin-top: 16px; }
-        .contact { background: #ece3cb; padding: 20px; border-radius: 10px; margin-top: 30px; }
-        .contact a, .footer a { color: #8B1E1E; text-decoration: none; }
-        .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5dcc4; color: #888; font-size: 0.9em; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nistikon — Orthodox Calendar &amp; Prayer Rule</title>
+  <meta name="description" content="Nistikon is the daily companion for Orthodox Christians: today's fast in plain English, a 50-year calendar, feasts &amp; saints, a Pascha countdown, and your own prayer rule — offline, no ads, no tracking.">
+  <link rel="icon" href="app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="app-icon.png" alt="Nistikon icon">
-            <h1>Nistikon</h1>
-            <div class="tagline">Today's fast, feasts &amp; saints, Pascha countdown, and your prayer rule — bundled for offline use.</div>
-        </div>
-
-        <h2>About</h2>
-        <p>Nistikon is the daily companion for Orthodox Christians. Open it to see today's fasting rule in plain English, the feasts and saints commemorated, a countdown to Pascha, and your own Morning and Evening prayer rule. Bundled content works offline; the developer collects no personal data and shows no ads.</p>
-
-        <h2>Features</h2>
-        <ul>
-            <li>Today's fasting discipline with a plain-English explanation</li>
-            <li>A 50-year color-coded fasting calendar (2026–2075)</li>
-            <li>Feasts, saints, and Scripture reading references for every day</li>
-            <li>New- and Old-Calendar modes for every major jurisdiction</li>
-            <li>A personal prayer rule from public-domain prayers, with reminders</li>
-            <li>Home-screen and lock-screen widgets</li>
-        </ul>
-
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-q">Why doesn't the fasting rule match my parish exactly?</div>
-        <p>Fasting practice varies by jurisdiction, parish, and household. Nistikon follows a widely published simplification. Always follow the guidance of your own priest.</p>
-
-        <div class="faq-q">Does the app work offline?</div>
-        <p>Yes. The fasting calendar, saints, and prayers are bundled and work in Airplane Mode. Apple StoreKit may contact the App Store for purchases or restores, and links you choose to open use your browser or the App Store.</p>
-
-        <div class="faq-q">How do I switch to the Old (Julian) Calendar?</div>
-        <p>In Settings, choose a jurisdiction such as ROCOR or Serbian. Old-Calendar mode is part of Nistikon Premium.</p>
-
-        <div class="faq-q">How do I manage or cancel my subscription?</div>
-        <p>Open your device's Settings, tap your name, then Subscriptions, and select Nistikon.</p>
-
-        <div class="contact">
-            <h2>Contact &amp; Support</h2>
-            <p>We'd love to hear from you — feedback, corrections, and questions all welcome:</p>
-            <p><a href="mailto:branicio@gmail.com">branicio@gmail.com</a></p>
-        </div>
-
-        <div class="footer">
-            <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a></p>
-            <p>&copy; 2026 Paulo Branicio. All rights reserved.</p>
-        </div>
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="cross"><svg width="18" height="28" viewBox="0 0 20 30" aria-hidden="true"><rect x="9" y="1" width="2" height="28"/><rect x="6" y="4" width="8" height="1.8"/><rect x="3" y="10" width="14" height="2.4"/><rect x="5.5" y="19.5" width="9" height="2" transform="rotate(-16 10 20.5)"/></svg></span>
+        Nistikon
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#fasting">Fasting</a>
+        <a href="#premium">Premium</a>
+        <a href="#faq">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
     </div>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <img class="icon" src="app-icon.png" alt="Nistikon app icon" data-rise style="animation-delay:.05s">
+      <h1 data-rise style="animation-delay:.12s">Nistikon</h1>
+      <p class="tagline" data-rise style="animation-delay:.2s">The Orthodox fasting calendar &amp; prayer companion.</p>
+      <p class="meta" data-rise style="animation-delay:.28s">iPhone &amp; iPad · iOS 17+ · Works offline</p>
+
+      <div class="hook" data-rise style="animation-delay:.36s">
+        <div class="q">“What is the fast today?”</div>
+        <div class="a">Nistikon answers the moment you open it — in plain English, entirely offline. No decoding rubrics, no guesswork.</div>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="block wrap" id="features">
+      <div class="section-head center">
+        <span class="kicker center">Every day, at a glance</span>
+        <h2>A whole liturgical year in your pocket</h2>
+        <p>Nistikon gathers the day's fast, its feasts and saints, the readings, and your prayer rule into one calm, respectful place — bundled to work in Airplane Mode.</p>
+      </div>
+
+      <div class="grid">
+        <div class="feature"><div class="ico">🍽️</div><h3>Today's fast</h3><p>The day's rule spelled out — “Wine and oil are allowed today” — with a glyph and a plain-English line. No rubric to decode.</p></div>
+        <div class="feature"><div class="ico">📅</div><h3>A 50-year calendar</h3><p>Every day from 2026 to 2075, color-coded by fasting level. Tap any date for its full detail, past or future.</p></div>
+        <div class="feature"><div class="ico">✝️</div><h3>Feasts &amp; saints</h3><p>The feasts and two to four saints commemorated each day, each with a short life, plus the day's Scripture reading references.</p></div>
+        <div class="feature"><div class="ico">⏳</div><h3>Pascha countdown</h3><p>A living countdown to Pascha and to the great fasting seasons, so you always know what's coming and when.</p></div>
+        <div class="feature"><div class="ico">🙏</div><h3>Your prayer rule</h3><p>Assemble a personal Morning and Evening rule from the prayer library, with gentle daily reminders — off by default, never any guilt.</p></div>
+        <div class="feature"><div class="ico">📖</div><h3>Prayer library</h3><p>The Usual Beginning, morning &amp; evening prayers, Psalm 50, pre-Communion prayers, the Jesus Prayer and troparia — in a large, readable type.</p></div>
+        <div class="feature"><div class="ico">🧩</div><h3>Widgets</h3><p>Home-screen and lock-screen widgets keep today's fast one glance away — no need to even open the app.</p></div>
+        <div class="feature"><div class="ico">🌍</div><h3>Every jurisdiction</h3><p>New- and Old-Calendar (Julian) modes, with presets for Greek (GOARCH), Antiochian, OCA, ROCOR, and Serbian practice.</p></div>
+      </div>
+    </section>
+
+    <section class="block wrap" id="fasting">
+      <div class="section-head center">
+        <span class="kicker center">The fasting glyphs</span>
+        <h2>Read the whole year at a colour</h2>
+        <p>Each day carries a glyph and a colour for its discipline — so a glance at the calendar tells you the shape of the week.</p>
+      </div>
+      <div class="levels">
+        <div class="level"><div class="glyph g-free">☀️</div><div><div class="name">Fast-free</div><div class="desc">No fasting</div></div></div>
+        <div class="level"><div class="glyph g-plain">🍽️</div><div><div class="name">No fast</div><div class="desc">A normal day</div></div></div>
+        <div class="level"><div class="glyph g-fish">🐟</div><div><div class="name">Fish</div><div class="desc">Fish, wine &amp; oil</div></div></div>
+        <div class="level"><div class="glyph g-wine">🍷</div><div><div class="name">Wine &amp; oil</div><div class="desc">Oil and wine permitted</div></div></div>
+        <div class="level"><div class="glyph g-strict">🥦</div><div><div class="name">Strict</div><div class="desc">Xerophagy</div></div></div>
+      </div>
+    </section>
+
+    <section class="vow">
+      <div class="wrap">
+        <span class="kicker center">Private by design</span>
+        <p>No ads. No accounts. No tracking.<br><span class="em">Nothing to sync.</span></p>
+      </div>
+    </section>
+
+    <section class="block wrap" id="premium">
+      <div class="section-head center">
+        <span class="kicker center">Free forever · Premium optional</span>
+        <h2>Built for the whole journey</h2>
+        <p>The daily essentials are free. Nistikon Premium opens the full 50-year calendar and your prayer rule — one price, works offline, no ads.</p>
+      </div>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Free</h3>
+          <div class="price">Always, no account</div>
+          <ul>
+            <li>Today's fast, feasts, saints &amp; readings</li>
+            <li>The current month's calendar</li>
+            <li>The complete prayer library</li>
+          </ul>
+        </div>
+        <div class="tier pro">
+          <span class="badge">Premium</span>
+          <h3>Nistikon Premium</h3>
+          <div class="price">$2.99 / month · $9.99 / year · 2-week free trial</div>
+          <ul>
+            <li>The full 2026–2075 calendar</li>
+            <li>Your Morning &amp; Evening prayer rule + reminders</li>
+            <li>Home- &amp; lock-screen widgets</li>
+            <li>Old-Calendar (Julian) mode</li>
+            <li>Pascha &amp; fast-season countdowns</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block wrap narrow" id="faq">
+      <div class="section-head center">
+        <span class="kicker center">Questions</span>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Why doesn't the fasting rule match my parish exactly?</summary>
+          <p>Fasting practice varies by jurisdiction, parish, and household. Nistikon follows a widely published simplification and labels it as such. Always follow the guidance of your own priest.</p>
+        </details>
+        <details>
+          <summary>Does the app work offline?</summary>
+          <p>Yes. The fasting calendar, saints, and prayers are bundled and work in Airplane Mode. Apple StoreKit may contact the App Store for purchases or restores, and links you choose to open use your browser or the App Store.</p>
+        </details>
+        <details>
+          <summary>How do I switch to the Old (Julian) Calendar?</summary>
+          <p>In Settings, choose a jurisdiction such as ROCOR or Serbian. Old-Calendar mode is part of Nistikon Premium.</p>
+        </details>
+        <details>
+          <summary>How do I manage or cancel my subscription?</summary>
+          <p>Open your device's Settings, tap your name, then Subscriptions, and select Nistikon.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="block wrap narrow">
+      <div class="contact-card">
+        <span class="kicker center">Contact &amp; support</span>
+        <h2 style="font-size:2rem;margin-top:12px;">We'd love to hear from you</h2>
+        <p style="color:var(--ink-soft);max-width:44ch;margin:8px auto 0;">Feedback, corrections to a fasting date, and questions are all welcome.</p>
+        <a class="mail" href="mailto:braniapps@gmail.com">braniapps@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="cross"><svg width="18" height="28" viewBox="0 0 20 30" aria-hidden="true"><rect x="9" y="1" width="2" height="28"/><rect x="6" y="4" width="8" height="1.8"/><rect x="3" y="10" width="14" height="2.4"/><rect x="5.5" y="19.5" width="9" height="2" transform="rotate(-16 10 20.5)"/></svg></span>
+        Nistikon
+      </a>
+      <nav class="foot-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="mailto:braniapps@gmail.com">Contact</a>
+      </nav>
+      <p class="priest">Fasting is pastoral — follow your priest's guidance.</p>
+      <p class="cr">© 2026 Paulo Branicio. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
