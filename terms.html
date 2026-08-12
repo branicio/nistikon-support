@@ -4,12 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Use — Nistikon</title>
-  <meta name="description" content="Terms of Use for Nistikon — Orthodox Fasting Calendar &amp; Prayer Rule.">
+  <meta name="description" content="Terms of Use for Nistikon — Orthodox Fasting Calendar &amp; Prayer Rule. Termos de Uso. Términos de Uso.">
   <link rel="icon" href="app-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
   <header class="nav">
@@ -19,57 +20,166 @@
         Nistikon
       </a>
       <nav class="nav-links">
-        <a href="index.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
+        <a href="index.html" data-i18n-en="Support" data-i18n-pt="Suporte" data-i18n-es="Soporte">Support</a>
+        <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
       </nav>
+      <div class="nav-right">
+        <div class="langtabs" role="tablist" aria-label="Language">
+          <button role="tab" data-lang-target="en" aria-label="English">EN</button>
+          <button role="tab" data-lang-target="pt" aria-label="Português">PT</button>
+          <button role="tab" data-lang-target="es" aria-label="Español">ES</button>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="wrap narrow">
-    <div class="legal-hero">
-      <span class="kicker center">Legal</span>
-      <h1>Terms of Use</h1>
-      <div class="app">Nistikon — Orthodox Fasting Calendar &amp; Prayer Rule</div>
-      <div class="date">Effective July 2026</div>
+    <div data-lang="en" lang="en">
+      <div class="legal-hero">
+        <span class="kicker center">Legal</span>
+        <h1>Terms of Use</h1>
+        <div class="app">Nistikon — Orthodox Fasting Calendar &amp; Prayer Rule</div>
+        <div class="date">Effective July 2026</div>
+      </div>
+
+      <div class="legal">
+        <div class="card">
+          <div class="highlight">
+            By downloading or using Nistikon, you agree to these Terms of Use. Please read them carefully.
+          </div>
+
+          <h2>The App</h2>
+          <p>Nistikon is a reference and practice aid for Eastern Orthodox Christians, providing a fasting calendar, feasts and saints, a Pascha countdown, and a personal prayer rule built from public-domain prayer texts. Its bundled reference and prayer content works offline.</p>
+
+          <h2>Religious Guidance, Not Rules</h2>
+          <p>The fasting information in Nistikon reflects a widely published simplification of Orthodox fasting practice and will not match every jurisdiction or household. It is general religious reference, not medical, dietary, or pastoral prescription. <strong>Always follow the guidance of your own priest or spiritual father.</strong></p>
+
+          <h2>Subscriptions</h2>
+          <p>Nistikon offers an optional auto-renewing subscription (Nistikon Premium) with monthly ($2.99 per month) and yearly ($9.99 per year) options. Each option includes a two-week introductory trial for eligible new subscribers. There is no lifetime product.</p>
+          <ul>
+            <li>Payment is charged to your Apple Account at confirmation of purchase.</li>
+            <li>The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
+            <li>Your account is charged for renewal within 24 hours prior to the end of the current period.</li>
+            <li>You can manage or cancel your subscription in your device's Settings › Apple Account › Subscriptions after purchase.</li>
+          </ul>
+
+          <h2>Content &amp; Sources</h2>
+          <p>All prayer texts are drawn from public-domain sources (notably Isabel Hapgood's <em>Service Book of the Holy Orthodox-Catholic Apostolic Church</em>, 1906). Saint descriptions are written independently for this app. No copyrighted liturgical translation is reproduced. Full attributions appear in the app under Settings › Content Sources.</p>
+
+          <h2>Disclaimer of Warranties</h2>
+          <p>Nistikon is provided "as is," without warranty of any kind. While we strive for liturgical accuracy, we do not guarantee that every date or rule is correct for your parish. Verify important dates with your parish calendar.</p>
+
+          <h2>Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, the developer shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+
+          <h2>Changes to These Terms</h2>
+          <p>We may update these Terms from time to time. Continued use of the app after changes are posted constitutes acceptance of the revised Terms.</p>
+
+          <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Questions about these Terms? Reach us at:</p>
+            <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="legal">
-      <div class="card">
-        <div class="highlight">
-          By downloading or using Nistikon, you agree to these Terms of Use. Please read them carefully.
+    <div data-lang="pt" lang="pt-BR">
+      <div class="legal-hero">
+        <span class="kicker center">Legal</span>
+        <h1>Termos de Uso</h1>
+        <div class="app">Nistikon — Calendário de Jejum Ortodoxo e Regra de Oração</div>
+        <div class="date">Em vigor desde julho de 2026</div>
+      </div>
+
+      <div class="legal">
+        <div class="card">
+          <div class="highlight">
+            Ao baixar ou usar o Nistikon, você concorda com estes Termos de Uso. Leia-os com atenção.
+          </div>
+
+          <h2>O Aplicativo</h2>
+          <p>O Nistikon é um auxílio de referência e prática para cristãos ortodoxos, oferecendo um calendário de jejum, festas e santos, uma contagem regressiva para a Páscoa (Pascha) e uma regra de oração pessoal composta de textos de oração em domínio público. Seu conteúdo de referência e oração vem incluído e funciona offline.</p>
+
+          <h2>Orientação Religiosa, Não Regras</h2>
+          <p>As informações de jejum no Nistikon refletem uma simplificação amplamente publicada da prática ortodoxa de jejum e não corresponderão a todas as jurisdições ou famílias. São referência religiosa geral, não prescrição médica, dietética ou pastoral. <strong>Siga sempre a orientação do seu próprio sacerdote ou pai espiritual.</strong></p>
+
+          <h2>Assinaturas</h2>
+          <p>O Nistikon oferece uma assinatura opcional com renovação automática (Nistikon Premium), com opções mensal (US$ 2,99 por mês) e anual (US$ 9,99 por ano). Cada opção inclui um período de teste introdutório de duas semanas para novos assinantes elegíveis. Não há produto vitalício.</p>
+          <ul>
+            <li>O pagamento é cobrado da sua Conta Apple na confirmação da compra.</li>
+            <li>A assinatura é renovada automaticamente, a menos que a renovação automática seja desativada pelo menos 24 horas antes do fim do período vigente.</li>
+            <li>A cobrança da renovação é feita nas 24 horas anteriores ao fim do período vigente.</li>
+            <li>Você pode gerenciar ou cancelar sua assinatura, após a compra, em Ajustes › Conta Apple › Assinaturas no seu dispositivo.</li>
+          </ul>
+
+          <h2>Conteúdo e Fontes</h2>
+          <p>Todos os textos de oração provêm de fontes em domínio público (notadamente o <em>Service Book of the Holy Orthodox-Catholic Apostolic Church</em> de Isabel Hapgood, 1906); as traduções em português foram preparadas para este aplicativo. As descrições dos santos foram escritas de forma independente para este aplicativo. Nenhuma tradução litúrgica protegida por direitos autorais é reproduzida. As atribuições completas aparecem no aplicativo em Ajustes › Fontes de Conteúdo.</p>
+
+          <h2>Isenção de Garantias</h2>
+          <p>O Nistikon é fornecido "como está", sem garantia de qualquer tipo. Embora nos esforcemos pela precisão litúrgica, não garantimos que cada data ou regra esteja correta para a sua paróquia. Verifique as datas importantes no calendário da sua paróquia.</p>
+
+          <h2>Limitação de Responsabilidade</h2>
+          <p>Na máxima extensão permitida por lei, o desenvolvedor não será responsável por quaisquer danos indiretos, incidentais ou consequentes decorrentes do uso do aplicativo.</p>
+
+          <h2>Alterações destes Termos</h2>
+          <p>Podemos atualizar estes Termos periodicamente. O uso continuado do aplicativo após a publicação de alterações constitui aceitação dos Termos revisados.</p>
+
+          <div class="contact">
+            <h2>Fale Conosco</h2>
+            <p>Dúvidas sobre estes Termos? Escreva para:</p>
+            <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <h2>The App</h2>
-        <p>Nistikon is a reference and practice aid for Eastern Orthodox Christians, providing a fasting calendar, feasts and saints, a Pascha countdown, and a personal prayer rule built from public-domain prayer texts. Its bundled reference and prayer content works offline.</p>
+    <div data-lang="es" lang="es">
+      <div class="legal-hero">
+        <span class="kicker center">Legal</span>
+        <h1>Términos de Uso</h1>
+        <div class="app">Nistikon — Calendario de Ayuno Ortodoxo y Regla de Oración</div>
+        <div class="date">En vigor desde julio de 2026</div>
+      </div>
 
-        <h2>Religious Guidance, Not Rules</h2>
-        <p>The fasting information in Nistikon reflects a widely published simplification of Orthodox fasting practice and will not match every jurisdiction or household. It is general religious reference, not medical, dietary, or pastoral prescription. <strong>Always follow the guidance of your own priest or spiritual father.</strong></p>
+      <div class="legal">
+        <div class="card">
+          <div class="highlight">
+            Al descargar o usar Nistikon, aceptas estos Términos de Uso. Léelos con atención.
+          </div>
 
-        <h2>Subscriptions</h2>
-        <p>Nistikon offers an optional auto-renewing subscription (Nistikon Premium) with monthly ($2.99 per month) and yearly ($9.99 per year) options. Each option includes a two-week introductory trial for eligible new subscribers. There is no lifetime product.</p>
-        <ul>
-          <li>Payment is charged to your Apple Account at confirmation of purchase.</li>
-          <li>The subscription renews automatically unless auto-renew is turned off at least 24 hours before the end of the current period.</li>
-          <li>Your account is charged for renewal within 24 hours prior to the end of the current period.</li>
-          <li>You can manage or cancel your subscription in your device's Settings › Apple Account › Subscriptions after purchase.</li>
-        </ul>
+          <h2>La Aplicación</h2>
+          <p>Nistikon es una ayuda de referencia y práctica para cristianos ortodoxos, que ofrece un calendario de ayuno, fiestas y santos, una cuenta regresiva hacia la Pascua (Pascha) y una regla de oración personal compuesta de textos de oración de dominio público. Su contenido de referencia y oración viene incluido y funciona sin conexión.</p>
 
-        <h2>Content &amp; Sources</h2>
-        <p>All prayer texts are drawn from public-domain sources (notably Isabel Hapgood's <em>Service Book of the Holy Orthodox-Catholic Apostolic Church</em>, 1906). Saint descriptions are written independently for this app. No copyrighted liturgical translation is reproduced. Full attributions appear in the app under Settings › Content Sources.</p>
+          <h2>Orientación Religiosa, No Reglas</h2>
+          <p>La información de ayuno en Nistikon refleja una simplificación ampliamente publicada de la práctica ortodoxa de ayuno y no coincidirá con todas las jurisdicciones u hogares. Es referencia religiosa general, no una prescripción médica, dietética ni pastoral. <strong>Sigue siempre la guía de tu propio sacerdote o padre espiritual.</strong></p>
 
-        <h2>Disclaimer of Warranties</h2>
-        <p>Nistikon is provided "as is," without warranty of any kind. While we strive for liturgical accuracy, we do not guarantee that every date or rule is correct for your parish. Verify important dates with your parish calendar.</p>
+          <h2>Suscripciones</h2>
+          <p>Nistikon ofrece una suscripción opcional con renovación automática (Nistikon Premium), con opciones mensual (2.99 USD al mes) y anual (9.99 USD al año). Cada opción incluye un período de prueba introductorio de dos semanas para nuevos suscriptores elegibles. No hay producto vitalicio.</p>
+          <ul>
+            <li>El pago se carga a tu Cuenta de Apple al confirmar la compra.</li>
+            <li>La suscripción se renueva automáticamente, salvo que la renovación automática se desactive al menos 24 horas antes del final del período vigente.</li>
+            <li>El cargo por la renovación se realiza dentro de las 24 horas previas al final del período vigente.</li>
+            <li>Puedes gestionar o cancelar tu suscripción, después de la compra, en Configuración › Cuenta de Apple › Suscripciones de tu dispositivo.</li>
+          </ul>
 
-        <h2>Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, the developer shall not be liable for any indirect, incidental, or consequential damages arising from your use of the app.</p>
+          <h2>Contenido y Fuentes</h2>
+          <p>Todos los textos de oración provienen de fuentes de dominio público (en particular, el <em>Service Book of the Holy Orthodox-Catholic Apostolic Church</em> de Isabel Hapgood, 1906); las traducciones al español fueron preparadas para esta aplicación. Las descripciones de los santos fueron escritas de forma independiente para esta aplicación. No se reproduce ninguna traducción litúrgica protegida por derechos de autor. Las atribuciones completas aparecen en la aplicación en Configuración › Fuentes de Contenido.</p>
 
-        <h2>Changes to These Terms</h2>
-        <p>We may update these Terms from time to time. Continued use of the app after changes are posted constitutes acceptance of the revised Terms.</p>
+          <h2>Renuncia de Garantías</h2>
+          <p>Nistikon se proporciona "tal cual", sin garantía de ningún tipo. Aunque nos esforzamos por la precisión litúrgica, no garantizamos que cada fecha o regla sea correcta para tu parroquia. Verifica las fechas importantes con el calendario de tu parroquia.</p>
 
-        <div class="contact">
-          <h2>Contact Us</h2>
-          <p>Questions about these Terms? Reach us at:</p>
-          <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+          <h2>Limitación de Responsabilidad</h2>
+          <p>En la máxima medida permitida por la ley, el desarrollador no será responsable de daños indirectos, incidentales o consecuentes derivados del uso de la aplicación.</p>
+
+          <h2>Cambios en estos Términos</h2>
+          <p>Podemos actualizar estos Términos ocasionalmente. El uso continuado de la aplicación después de la publicación de cambios constituye la aceptación de los Términos revisados.</p>
+
+          <div class="contact">
+            <h2>Contáctanos</h2>
+            <p>¿Preguntas sobre estos Términos? Escríbenos a:</p>
+            <p><a href="mailto:braniapps@gmail.com">braniapps@gmail.com</a></p>
+          </div>
         </div>
       </div>
     </div>
@@ -82,11 +192,11 @@
         Nistikon
       </a>
       <nav class="foot-links">
-        <a href="index.html">Support</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="mailto:braniapps@gmail.com">Contact</a>
+        <a href="index.html" data-i18n-en="Support" data-i18n-pt="Suporte" data-i18n-es="Soporte">Support</a>
+        <a href="privacy.html" data-i18n-en="Privacy Policy" data-i18n-pt="Política de Privacidade" data-i18n-es="Política de Privacidad">Privacy Policy</a>
+        <a href="mailto:braniapps@gmail.com" data-i18n-en="Contact" data-i18n-pt="Contato" data-i18n-es="Contacto">Contact</a>
       </nav>
-      <p class="priest">Fasting is pastoral — follow your priest's guidance.</p>
+      <p class="priest" data-i18n-en="Fasting is pastoral — follow your priest's guidance." data-i18n-pt="O jejum é pastoral — siga a orientação do seu sacerdote." data-i18n-es="El ayuno es pastoral — sigue la guía de tu sacerdote.">Fasting is pastoral — follow your priest's guidance.</p>
       <p class="cr">© 2026 Paulo Branicio. All rights reserved.</p>
     </div>
   </footer>

@@ -267,3 +267,78 @@ section.block { padding: 56px 0; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* --------------------------------------------------------------- langtabs */
+
+/* Contract: .langtabs is the role="tablist"; each control is a button with
+   role="tab" and data-lang-target (site.js maintains aria-selected and
+   tabindex). The selected state carries three cues — fill, weight and a gold
+   underbar — so it never rests on colour alone. */
+.nav-right { display: flex; align-items: center; }
+.langtabs {
+  display: inline-flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgba(122, 94, 18, 0.08);
+  border: 1px solid var(--gold-hair);
+}
+.langtabs [role="tab"] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px 12px 7px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.langtabs [role="tab"]:hover { color: var(--byzantine); }
+.langtabs [role="tab"][aria-selected="true"] {
+  background: var(--card);
+  color: var(--byzantine);
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(43, 25, 12, 0.25);
+}
+/* Non-colour cue: only the selected tab grows a gold underbar. */
+.langtabs [role="tab"][aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 3px;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--gold);
+}
+@media (max-width: 380px) {
+  .langtabs [role="tab"] { padding: 5px 9px 6px; letter-spacing: 0.06em; }
+}
+
+/* ------------------------------------------------- language visibility */
+
+/* Language sections are hidden ONLY under the authorisation of data-js on
+   <html>. If the script never runs, throws before that line, or fails during
+   setup, that attribute is absent (or withdrawn) and all languages render
+   stacked. Showing three languages is a cosmetic failure; showing none would
+   be a legal-content outage. Never hide [data-lang] outside an
+   html[data-js="on"] scope. */
+html[data-js="on"] [data-lang] { display: none; }
+html[data-js="on"] [data-lang][data-lang-active] { display: block; }
+
+/* No-JS stacked view: a hairline between adjacent language variants so the
+   repeat reads as deliberate, and no dead language switcher. */
+html:not([data-js="on"]) [data-lang] + [data-lang] {
+  border-top: 2px solid var(--gold-hair);
+  margin-top: 28px;
+  padding-top: 28px;
+}
+html:not([data-js="on"]) .langtabs { display: none; }
