@@ -1,6 +1,6 @@
 # Nistikon — Support
 
-Support and legal pages for **Nistikon — Orthodox Calendar**, an offline Orthodox fasting calendar and prayer-rule companion for iOS.
+Support and legal pages for **Nistikon — Orthodox Calendar**, an offline Orthodox fasting calendar and prayer-rule companion for iOS and Android.
 
 All three pages are trilingual (English, Português, Español): each page carries
 `[data-lang]` sections for all three languages and `site.js` shows one, driven
