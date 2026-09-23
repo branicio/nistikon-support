@@ -328,7 +328,7 @@ section.block { padding: 56px 0; }
 /* Language sections are hidden ONLY under the authorisation of data-js on
    <html>. If the script never runs, throws before that line, or fails during
    setup, that attribute is absent (or withdrawn) and all languages render
-   stacked. Showing three languages is a cosmetic failure; showing none would
+   stacked. Showing four languages is a cosmetic failure; showing none would
    be a legal-content outage. Never hide [data-lang] outside an
    html[data-js="on"] scope. */
 html[data-js="on"] [data-lang] { display: none; }

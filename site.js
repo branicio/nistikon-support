@@ -1,7 +1,7 @@
 (function () {
   // Set first: styles.css only hides languages once this is present, so a
   // script error before this line (e.g. a parse failure) degrades to all
-  // three languages shown stacked, never to none. Everything AFTER it runs
+  // four languages shown stacked, never to none. Everything AFTER it runs
   // inside the try/catch below, whose catch removes this very attribute:
   // it is what authorises the stylesheet to hide any [data-lang] section,
   // so any failure to complete setup must withdraw that authorisation
@@ -11,11 +11,12 @@
   document.documentElement.dataset.js = "on";
 
   try {
-    var HASH = { portugues: "pt", espanol: "es", top: "en" };
+    var HASH = { portugues: "pt", espanol: "es", francais: "fr", top: "en" };
     // The app's Spanish is plain `es` (neutral Latin American register), so
     // the document language mirrors that rather than a region-tagged variant.
-    var LANG_ATTR = { en: "en", pt: "pt-BR", es: "es" };
-    var FRAGMENT = { pt: "#portugues", es: "#espanol", en: "" };
+    // French is likewise plain `fr`, as in the app (it covers fr-FR and fr-CA).
+    var LANG_ATTR = { en: "en", pt: "pt-BR", es: "es", fr: "fr" };
+    var FRAGMENT = { pt: "#portugues", es: "#espanol", fr: "#francais", en: "" };
     var STORE_KEY = "nistikon.lang";
     // The three real pages of this site, keyed by filename. Everything else an
     // <a> can point at — mailto:, in-page anchors like #features — is
@@ -26,7 +27,7 @@
     // Written as a function rather than a map lookup so that no inherited
     // Object property ("constructor", "toString", ...) can masquerade as a
     // valid stored language.
-    function isLang(v) { return v === "en" || v === "pt" || v === "es"; }
+    function isLang(v) { return v === "en" || v === "pt" || v === "es" || v === "fr"; }
 
     var sections = Array.prototype.slice.call(document.querySelectorAll("[data-lang]"));
     var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
@@ -55,7 +56,7 @@
     i18nEls.forEach(function (el) { el.dataset.i18nBaseline = el.textContent; });
 
     // The same channel for aria-label. A label is text a screen-reader user
-    // hears, so on a trilingual site it has to speak their language; but it is
+    // hears, so on a multilingual site it has to speak their language; but it is
     // an attribute, not textContent, so the loop above cannot carry it. Only
     // the shared chrome needs this — inside a [data-lang] section a label is
     // already translated by duplication. Baseline is captured here, before any
@@ -108,7 +109,7 @@
       if (!store) return null;
       try {
         var v = store.getItem(STORE_KEY);
-        // Anything that is not one of the three languages — hand-edited, left
+        // Anything that is not one of the four languages — hand-edited, left
         // by an older build, corrupted — is ignored rather than trusted.
         return isLang(v) ? v : null;
       } catch (e) {
@@ -125,9 +126,9 @@
       // Order matters, and the first two are the non-obvious part.
       //
       // A language named in the URL outranks the stored preference on purpose:
-      // #portugues / #espanol / #top is an explicit, per-visit request — the
-      // app's Settings deep-links land here precisely to arrive in that
-      // language — while the stored value only records what this browser chose
+      // #portugues / #espanol / #francais / #top is an explicit, per-visit
+      // request — the app's Settings deep-links land here precisely to arrive
+      // in that language — while the stored value only records what this browser chose
       // last time. If memory won, a Portuguese reader could never open a
       // Spanish link a friend sent them.
       var h = (location.hash || "").replace("#", "").toLowerCase();
@@ -137,6 +138,7 @@
       var n = (navigator.language || "en").toLowerCase();
       if (n.indexOf("pt") === 0) return "pt";
       if (n.indexOf("es") === 0) return "es";
+      if (n.indexOf("fr") === 0) return "fr";
       return "en";
     }
 
@@ -232,10 +234,10 @@
     // sticky wrong answer this feature exists to avoid.
     if (HASH[initialHash]) remember(initialLang);
     // Only re-derive the language when the new hash actually names one of the
-    // three language anchors (#top / #portugues / #espanol). Any other
-    // in-page anchor — #features, #faq — must leave the reader's current
+    // four language anchors (#top / #portugues / #espanol / #francais). Any
+    // other in-page anchor — #features, #faq — must leave the reader's current
     // language alone: falling through to pick()'s navigator.language branch on
-    // every hashchange would silently switch a PT/ES reader who clicks an
+    // every hashchange would silently switch a PT/ES/FR reader who clicks an
     // ordinary anchor to whatever the browser's locale says.
     // Arriving at a language anchor is an explicit signal too, so it is
     // remembered on the same terms as a tab click.
@@ -247,7 +249,7 @@
   } catch (err) {
     // Setup did not complete, so withdraw the authorisation data-js grants
     // the stylesheet to hide content: without it, the no-JS branch takes
-    // over and all three languages render stacked. Never rethrow past here.
+    // over and all four languages render stacked. Never rethrow past here.
     document.documentElement.removeAttribute("data-js");
     console.error("site.js: language-tab setup failed, falling back to no-JS presentation", err);
   }
