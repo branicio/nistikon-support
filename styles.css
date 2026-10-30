@@ -1,5 +1,9 @@
 /* Nistikon support site — "illuminated manuscript, modernized"
-   Cormorant Garamond (display) + Spectral (body), byzantine red & gold on parchment. */
+   Cormorant Garamond (display) + Spectral (body), byzantine red & gold on parchment.
+   Neither face has Greek glyphs, so each stack names a Greek-capable second
+   face — EB Garamond for display, Literata for body. Fallback is per glyph:
+   Latin text never reaches them, and Google Fonts' unicode-range subsets mean
+   only their Greek files are ever downloaded. */
 
 :root {
   --parchment:      #F5EEDC;
@@ -44,7 +48,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: "Spectral", Georgia, "Times New Roman", serif;
+  font-family: "Spectral", "Literata", Georgia, "Times New Roman", serif;
   font-size: 18px;
   line-height: 1.7;
   color: var(--ink);
@@ -76,7 +80,7 @@ body::before {
 
 /* ---- Typography ---- */
 h1, h2, h3, .display {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif;
   font-weight: 600;
   line-height: 1.08;
   color: var(--ink);
@@ -86,7 +90,7 @@ a { color: var(--byzantine); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .kicker {
-  font-family: "Spectral", serif;
+  font-family: "Spectral", "Literata", serif;
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.28em;
@@ -115,7 +119,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border-bottom: 1px solid var(--hair);
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-.brand { display: flex; align-items: center; gap: 11px; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 700; color: var(--byzantine); }
+.brand { display: flex; align-items: center; gap: 11px; font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: 1.5rem; font-weight: 700; color: var(--byzantine); }
 .brand:hover { text-decoration: none; }
 .nav-links { display: flex; gap: 26px; align-items: center; }
 .nav-links a { font-size: 0.86rem; letter-spacing: 0.04em; color: var(--ink-soft); }
@@ -138,7 +142,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border: 1px solid var(--gold-hair); border-radius: var(--radius);
   background: linear-gradient(180deg, color-mix(in srgb, var(--card) 90%, transparent), transparent);
 }
-.hook .q { font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); }
+.hook .q { font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: 1.9rem; font-weight: 600; color: var(--ink); }
 .hook .a { color: var(--ink-soft); font-size: 1rem; margin-top: 4px; }
 
 /* ---- Section rhythm ---- */
@@ -176,7 +180,7 @@ section.block { padding: 56px 0; }
   display: grid; place-items: center; font-size: 1.35rem;
   border: 1px solid var(--card-line);
 }
-.level .name { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); line-height: 1.1; }
+.level .name { font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: 1.3rem; font-weight: 600; color: var(--ink); line-height: 1.1; }
 .level .desc { font-size: 0.82rem; color: var(--ink-soft); }
 .g-free   { background: rgba(201,151,26,0.16); }
 .g-fish   { background: rgba(58,102,150,0.18); }
@@ -190,18 +194,18 @@ section.block { padding: 56px 0; }
 .tier { border: 1px solid var(--card-line); border-radius: var(--radius); padding: 28px; background: var(--card); }
 .tier.pro { border-color: var(--gold-hair); box-shadow: var(--shadow); position: relative; }
 .tier h3 { font-size: 1.7rem; color: var(--byzantine); }
-.tier .price { font-family: "Cormorant Garamond", serif; font-size: 1.15rem; color: var(--gold-deep); margin: 4px 0 16px; }
+.tier .price { font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: 1.15rem; color: var(--gold-deep); margin: 4px 0 16px; }
 .tier ul { list-style: none; }
 .tier li { padding: 7px 0 7px 26px; position: relative; color: var(--ink-soft); font-size: 0.98rem; }
 .tier li::before { content: "✦"; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; top: 9px; }
-.badge { position: absolute; top: -12px; right: 22px; background: var(--byzantine); color: #FCF8EC; font-family: "Spectral", serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
+.badge { position: absolute; top: -12px; right: 22px; background: var(--byzantine); color: #FCF8EC; font-family: "Spectral", "Literata", serif; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
 
 /* ---- Vow / privacy banner ---- */
 .vow {
   text-align: center; border-top: 1px solid var(--gold-hair); border-bottom: 1px solid var(--gold-hair);
   padding: 52px 0;
 }
-.vow p { font-family: "Cormorant Garamond", serif; font-size: clamp(1.6rem, 4.4vw, 2.5rem); font-style: italic; color: var(--ink); max-width: 22ch; margin: 12px auto 0; line-height: 1.25; }
+.vow p { font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: clamp(1.6rem, 4.4vw, 2.5rem); font-style: italic; color: var(--ink); max-width: 22ch; margin: 12px auto 0; line-height: 1.25; }
 .vow .em { color: var(--byzantine); font-style: normal; }
 
 /* ---- FAQ ---- */
@@ -210,12 +214,12 @@ section.block { padding: 56px 0; }
 }
 .faq summary {
   cursor: pointer; list-style: none; padding: 16px 40px 16px 0; position: relative;
-  font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 600; color: var(--ink);
+  font-family: "Cormorant Garamond", "EB Garamond", serif; font-size: 1.5rem; font-weight: 600; color: var(--ink);
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after {
   content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%);
-  color: var(--gold); font-family: "Spectral", serif; font-size: 1.6rem; transition: transform 0.3s;
+  color: var(--gold); font-family: "Spectral", "Literata", serif; font-size: 1.6rem; transition: transform 0.3s;
 }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { color: var(--ink-soft); padding: 0 40px 18px 0; font-size: 1rem; }
@@ -226,7 +230,7 @@ section.block { padding: 56px 0; }
   border-radius: var(--radius); padding: 44px 30px;
 }
 .contact-card .mail {
-  display: inline-block; margin-top: 14px; font-family: "Cormorant Garamond", serif;
+  display: inline-block; margin-top: 14px; font-family: "Cormorant Garamond", "EB Garamond", serif;
   font-size: 1.7rem; font-weight: 600; color: var(--byzantine);
   border-bottom: 1px solid var(--gold-hair);
 }
@@ -291,6 +295,9 @@ section.block { padding: 56px 0; }
   background: transparent;
   cursor: pointer;
   padding: 6px 12px 7px;
+  /* WCAG 2.5.8 target size: the tightest step below would leave "IT" ~22px
+     wide, and the tabs touch, so the spacing exception cannot apply. */
+  min-width: 24px;
   border-radius: 999px;
   font-family: inherit;
   font-size: 0.68rem;
@@ -319,8 +326,37 @@ section.block { padding: 56px 0; }
   border-radius: 1px;
   background: var(--gold);
 }
-@media (max-width: 380px) {
+/* Six tabs share the bar with the brand alone on phones (the in-page links are
+   hidden up to 640px) and with the links from 641px. Each tab size is used
+   only where it fits with a clear gap in every language — French and Greek
+   carry the widest link labels:
+     default  450–640px and from 900px
+     compact  410–449px and 700–899px
+     tight    360–409px and 641–699px (where the links' gap also narrows)
+     tighter  up to 359px, with a slightly smaller brand, so the strip stays
+              inside the gutter at 320px
+   index.html's five links fit beside the strip only from 900px; below that
+   the fifth (Privacy, which the footer also carries) is hidden. The legal
+   pages have two links, so the nth-child rule never reaches them.
+   Before changing a size, re-measure every page in every language: the
+   overflow this prevents is invisible to a scrollWidth check, because
+   body { overflow-x: hidden } silently clips whatever pokes past the edge. */
+@media (max-width: 449px), (min-width: 641px) and (max-width: 899px) {
   .langtabs [role="tab"] { padding: 5px 9px 6px; letter-spacing: 0.06em; }
+}
+@media (max-width: 899px) {
+  .nav-links { gap: 16px; }
+  .nav-links a:nth-child(n+5) { display: none; }
+}
+@media (max-width: 409px), (min-width: 641px) and (max-width: 699px) {
+  .langtabs { gap: 0; }
+  .langtabs [role="tab"] { padding: 5px 6px 6px; letter-spacing: 0.04em; }
+  .nav-links { gap: 12px; }
+}
+@media (max-width: 359px) {
+  .langtabs [role="tab"] { padding: 5px 5px 6px; letter-spacing: 0.02em; }
+  .nav .brand { gap: 8px; font-size: 1.25rem; }
+  .nav .brand svg { width: 15px; height: 23px; }
 }
 
 /* ------------------------------------------------- language visibility */
@@ -328,7 +364,7 @@ section.block { padding: 56px 0; }
 /* Language sections are hidden ONLY under the authorisation of data-js on
    <html>. If the script never runs, throws before that line, or fails during
    setup, that attribute is absent (or withdrawn) and all languages render
-   stacked. Showing four languages is a cosmetic failure; showing none would
+   stacked. Showing six languages is a cosmetic failure; showing none would
    be a legal-content outage. Never hide [data-lang] outside an
    html[data-js="on"] scope. */
 html[data-js="on"] [data-lang] { display: none; }
