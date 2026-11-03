@@ -21,11 +21,11 @@
     var LANG_ATTR = { en: "en", pt: "pt-BR", es: "es", fr: "fr", it: "it", el: "el", de: "de" };
     var FRAGMENT = { pt: "#portugues", es: "#espanol", fr: "#francais", it: "#italiano", el: "#ellinika", de: "#deutsch", en: "" };
     var STORE_KEY = "nistikon.lang";
-    // The three real pages of this site, keyed by filename. Everything else an
+    // The four real pages of this site, keyed by filename. Everything else an
     // <a> can point at — mailto:, in-page anchors like #features — is
     // deliberately absent: a language fragment on those is meaningless at best
     // and breaks the target at worst.
-    var PAGES = { "index.html": true, "privacy.html": true, "terms.html": true };
+    var PAGES = { "index.html": true, "privacy.html": true, "terms.html": true, "impressum.html": true };
 
     // Written as a function rather than a map lookup so that no inherited
     // Object property ("constructor", "toString", ...) can masquerade as a
@@ -153,8 +153,12 @@
 
     // A requested language with no section falls back to "en"; if even "en"
     // has no section, the first [data-lang] in document order wins. This is
-    // what makes "zero active sections" impossible.
+    // what makes "zero active sections" impossible. A page with no [data-lang]
+    // sections at all (impressum.html: one static document) has nothing to
+    // show or hide, so the reader's language stands as asked: it still drives
+    // the nav and footer labels, <html lang> and the fragment on outgoing links.
     function resolveLang(lang) {
+      if (!sections.length) return Object.prototype.hasOwnProperty.call(FRAGMENT, lang) ? lang : "en";
       var i;
       for (i = 0; i < sections.length; i++) {
         if (sections[i].dataset.lang === lang) return lang;

@@ -11,11 +11,15 @@ language. Without JavaScript the seven languages render stacked — legal conten
 is never hidden. The app's Settings deep-links carry the fragment matching the
 in-app language.
 
+`impressum.html` is the legal notice (Impressum, § 5 DDG): one static page with no `[data-lang]` sections, German, English and French in full plus a line in each other language; `site.js` still follows the reader's language for its nav and footer.
+`fonts/` self-hosts the four Google Fonts families (latin, latin-ext, greek, greek-ext; OFL texts in `fonts/LICENSES.txt`), so no page requests anything from Google.
+
 ## Links
 
 - [Support website](https://branicio.github.io/nistikon-support/)
 - [Privacy Policy](https://branicio.github.io/nistikon-support/privacy.html) · [pt](https://branicio.github.io/nistikon-support/privacy.html#portugues) · [es](https://branicio.github.io/nistikon-support/privacy.html#espanol) · [fr](https://branicio.github.io/nistikon-support/privacy.html#francais) · [it](https://branicio.github.io/nistikon-support/privacy.html#italiano) · [el](https://branicio.github.io/nistikon-support/privacy.html#ellinika) · [de](https://branicio.github.io/nistikon-support/privacy.html#deutsch)
 - [Terms of Use](https://branicio.github.io/nistikon-support/terms.html) · [pt](https://branicio.github.io/nistikon-support/terms.html#portugues) · [es](https://branicio.github.io/nistikon-support/terms.html#espanol) · [fr](https://branicio.github.io/nistikon-support/terms.html#francais) · [it](https://branicio.github.io/nistikon-support/terms.html#italiano) · [el](https://branicio.github.io/nistikon-support/terms.html#ellinika) · [de](https://branicio.github.io/nistikon-support/terms.html#deutsch)
+- [Legal notice / Impressum](https://branicio.github.io/nistikon-support/impressum.html)
 
 ## Contact
 
