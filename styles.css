@@ -265,6 +265,16 @@ section.block { padding: 56px 0; }
 .legal .contact h2 { border: 0; padding: 0; }
 .legal .contact a { font-size: 1.2rem; }
 
+/* German compounds ("Benachrichtigungseinstellungen", "Personenbezogene") are
+   wider than a phone's legal card, so the German legal text lets the browser
+   hyphenate with its German dictionary (the section carries lang="de") rather
+   than run past the card's edge. Only there: the support page's German fits
+   without it, and its uppercase hero line must not break "Android". The page
+   titles and the longest headings carry soft hyphens (&shy;) instead, which
+   pin the break to the word joint ("Datenschutz-erklärung") — a word holding a
+   soft hyphen is never auto-hyphenated anywhere else. */
+[data-lang="de"] .legal { -webkit-hyphens: auto; hyphens: auto; }
+
 /* ---- Motion ---- */
 @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
 [data-rise] { animation: rise 0.8s cubic-bezier(.2,.7,.2,1) both; }
@@ -295,8 +305,8 @@ section.block { padding: 56px 0; }
   background: transparent;
   cursor: pointer;
   padding: 6px 12px 7px;
-  /* WCAG 2.5.8 target size: the tightest step below would leave "IT" ~22px
-     wide, and the tabs touch, so the spacing exception cannot apply. */
+  /* WCAG 2.5.8 target size: the tightest step below would leave "IT" under
+     24px wide, and the tabs touch, so the spacing exception cannot apply. */
   min-width: 24px;
   border-radius: 999px;
   font-family: inherit;
@@ -326,35 +336,45 @@ section.block { padding: 56px 0; }
   border-radius: 1px;
   background: var(--gold);
 }
-/* Six tabs share the bar with the brand alone on phones (the in-page links are
-   hidden up to 640px) and with the links from 641px. Each tab size is used
-   only where it fits with a clear gap in every language — French and Greek
-   carry the widest link labels:
-     default  450–640px and from 900px
-     compact  410–449px and 700–899px
-     tight    360–409px and 641–699px (where the links' gap also narrows)
-     tighter  up to 359px, with a slightly smaller brand, so the strip stays
-              inside the gutter at 320px
-   index.html's five links fit beside the strip only from 900px; below that
-   the fifth (Privacy, which the footer also carries) is hidden. The legal
-   pages have two links, so the nth-child rule never reaches them.
+/* Seven tabs share the bar with the brand alone on phones (the in-page links
+   are hidden up to 640px) and with the links from 641px. Each tab size is
+   used only where it leaves at least a 14px gap between neighbours in every
+   language — French and Greek carry the widest link labels:
+     default  490–640px and from 788px
+     compact  440–489px and 740–787px
+     tight    390–439px and 672–739px (where the links' gap also narrows)
+     tighter  up to 389px and 641–671px; up to 359px the brand is also
+              slightly smaller and the header's side gutter narrows from 28px
+              to 16px, so the strip stays inside the gutter at 320px (seven
+              tabs are at the 24px target-size floor there, so the room has to
+              come from the edge)
+   index.html's five links fit beside the strip only from 940px; below that
+   the fifth (Privacy, which the footer also carries) is hidden, and at
+   641–671px the fourth (FAQ) too. The legal pages have two links, so the
+   nth-child rules never reach them.
    Before changing a size, re-measure every page in every language: the
    overflow this prevents is invisible to a scrollWidth check, because
    body { overflow-x: hidden } silently clips whatever pokes past the edge. */
-@media (max-width: 449px), (min-width: 641px) and (max-width: 899px) {
+@media (max-width: 489px), (min-width: 641px) and (max-width: 787px) {
   .langtabs [role="tab"] { padding: 5px 9px 6px; letter-spacing: 0.06em; }
 }
-@media (max-width: 899px) {
+@media (max-width: 939px) {
   .nav-links { gap: 16px; }
   .nav-links a:nth-child(n+5) { display: none; }
 }
-@media (max-width: 409px), (min-width: 641px) and (max-width: 699px) {
+@media (max-width: 439px), (min-width: 641px) and (max-width: 739px) {
   .langtabs { gap: 0; }
   .langtabs [role="tab"] { padding: 5px 6px 6px; letter-spacing: 0.04em; }
   .nav-links { gap: 12px; }
 }
+@media (max-width: 389px), (min-width: 641px) and (max-width: 671px) {
+  .langtabs [role="tab"] { padding: 5px 4px 6px; letter-spacing: 0.02em; }
+}
+@media (min-width: 641px) and (max-width: 671px) {
+  .nav-links a:nth-child(n+4) { display: none; }
+}
 @media (max-width: 359px) {
-  .langtabs [role="tab"] { padding: 5px 5px 6px; letter-spacing: 0.02em; }
+  .nav .wrap { padding: 0 16px; }
   .nav .brand { gap: 8px; font-size: 1.25rem; }
   .nav .brand svg { width: 15px; height: 23px; }
 }
@@ -364,7 +384,7 @@ section.block { padding: 56px 0; }
 /* Language sections are hidden ONLY under the authorisation of data-js on
    <html>. If the script never runs, throws before that line, or fails during
    setup, that attribute is absent (or withdrawn) and all languages render
-   stacked. Showing six languages is a cosmetic failure; showing none would
+   stacked. Showing seven languages is a cosmetic failure; showing none would
    be a legal-content outage. Never hide [data-lang] outside an
    html[data-js="on"] scope. */
 html[data-js="on"] [data-lang] { display: none; }
