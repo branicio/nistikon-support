@@ -11,7 +11,7 @@ language. Without JavaScript the seven languages render stacked — legal conten
 is never hidden. The app's Settings deep-links carry the fragment matching the
 in-app language.
 
-`impressum.html` is the legal notice (Impressum, § 5 DDG): one static page with no `[data-lang]` sections, German, English and French in full plus a line in each other language; `site.js` still follows the reader's language for its nav and footer.
+`impressum.html` is the legal notice (Impressum, § 5 DDG), added 2026-11-03: like the other pages it carries `[data-lang]` sections for all seven languages, switched by the same language tabs and fragments.
 `fonts/` self-hosts the four Google Fonts families (latin, latin-ext, greek, greek-ext; OFL texts in `fonts/LICENSES.txt`), so no page requests anything from Google.
 
 ## Links
